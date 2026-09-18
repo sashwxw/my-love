@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HB</title>
+    <link rel="icon" href="images/h.png" type="image/x-icon">
+    <style>
+        body{
+            min-height: 100vh;
+            min-width: 100vw;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3e1111;
+        }
+        body::before {
+            content: "♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥ ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥ ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥ ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥ ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥ ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥ ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥ ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥ ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥ ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥♡  ♥  ♡  ♥  ♡  ♥  ♡  ♥  ";
+            position: fixed; 
+            color: #d87888; 
+            font-size: clamp(20px, 3vw, 40px); 
+            line-height: 100px; 
+            letter-spacing: clamp(20px, 5vw, 70px); 
+            animation: moveHearts 10s linear infinite; 
+        }
+        .letters{
+            z-index: 2; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 10px; 
+            width: 90%; 
+        }
+        img{
+            width: clamp(150px, 18vw, 200px);
+            padding: 10px;
+            display: block;
+            border-radius: 30px;
+        }
+        button{
+            border: none;
+            background: none;
+            padding: 0;
+            cursor: pointer;
+        }
+        @keyframes moveHearts {
+            0% {
+                transform: translateY(-100px);
+            }
+
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+        @media (max-width: 600px) {
+            .letters {
+                width: 95%;
+            }
+            img {
+                width: 120px;
+                border-radius: 20px;
+            }
+            body::before {
+                font-size: 22px;
+                line-height: 70px;
+                letter-spacing: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="letters">
+        <button onclick="first()"><img src="letter1.jpg" alt="letter1"></button>
+        <button onclick="second()"><img src="letter2.jpg" alt="letter2"></button>
+        <button onclick="third()"><img src="letter3.png" alt="letter3"></button>
+    </div>
+    <script>
+    function first() {
+        window.location.href = "first.html";
+    }
+    function second() {
+        window.location.href = "second.html";
+    }
+    function third() {
+        window.location.href = "third.html";
+    }
+</script>
+</body>
+</html>
