@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter for my love</title>
+    <link rel="icon" href="images/h.png" type="image/x-icon">
+    <style>
+        * {
+    box-sizing: border-box;
+}
+body {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d3afd6;
+    font-family: Georgia, serif;
+    overflow: hidden;
+}
+.closed {
+    width: min(85vw, 500px);
+    text-align: center;
+    transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+}
+.closed img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.2);
+}
+.closed p {
+    margin-top: 15px;
+    color: #7d4545;
+    font-size: 18px;
+}
+.closed:hover {
+    transform: scale(1.03) rotate(-1deg);
+}
+.open {
+    width: 100%;
+    height: 100dvh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.open.show {
+    display: flex;
+    animation: letterAppear 1s forwards;
+}
+.letter {
+    position: relative;
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+.letter img {
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+}
+.closed.hide,
+.open.hide {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.closed.show {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+    animation: letterAppear 0.5s forwards;
+}
+
+.open.hide {
+    animation: letterDisappear 0.5s forwards;
+}
+.text {
+    position: absolute;
+    top: 12%;
+    left: 15%;
+    width: 70%;
+    height: 72%;
+    color: #4b2929;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: left;
+    white-space: pre-line;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.text::-webkit-scrollbar {
+    width: 5px;
+}
+.text::-webkit-scrollbar-track {
+    background: transparent;
+}
+.text::-webkit-scrollbar-thumb {
+    background: rgba(125, 69, 69, 0.45);
+    border-radius: 10px;
+}
+footer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+.back {
+    background: none;
+    border: none;
+    color: #7d4545;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    cursor: pointer;
+}
+.back:hover {
+    text-decoration: underline;
+}
+
+@keyframes letterAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes letterDisappear {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+@media (max-width: 600px) {
+    .closed {
+        width: 90%;
+    }
+    .letter {
+        max-width: 95vw;
+        max-height: 90vh;
+    }
+    .letter img{
+        max-width: 90vw;
+        max-height: 90vh;
+    }
+    .text {
+        font-size: 13px;
+        line-height: 1.4;
+        top: 15%;
+        left: 15%;
+        width: 70%;
+        height: 70%;
+        padding: 5px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="closed" id="closedLetter" onclick="openLetter()">
+        <img src="closed.jpg">
+        <p>Натисни</p>
+    </div>
+    <div class="open" id="openLetter">
+        <div class="letter">
+        <img src="open.png" alt="Відкритий лист" onclick="closedLetter()">
+        <div class="text">З днем народження, моє чудо!🥳❤️💋
+Вітаю тебе від щирого серця з твоїм днем народженням, все сьогодні настає період невайбового віку, тобі вже не буде 16, але 17 це теж ще малалєтка, в тебе ще цілий рік,  до серйозних цифер.😖
+Бажаю тобі всього самого найкращого, щоб тебе оточували хороші люди, багато ґрошей, здоровʼя(з твоїм то баскетболом), щоб всі твої мрії збувалися, ну найкраще в твоєму житті вже трапилося(якщо ти не зрозумів то це я).
+Я тебе дуже сильно люблю❤️, і вдячна долі за те, що зустріла тебе, ну для тебе це можливо й не доля звела нас, але ти просто не шариш. Памʼятаю, як побачила тебе вперше, цей погляд, цей момент, я не забуду ніколи. Я зовсім не шукала стосунків, але ти був дуже настирний. Тепер я не уявляю свого життя без тебе. Який ти був соромязливий, моментами я думала ти втечеш від мене, але цей час пройшов, я дуже рада(ну тепер ти токсік, але це таке). Кожна наша зустріч в живу незабутня, кожна розмова з тобою це затишок. Я ціную кожин момент з тобою, не рахуємо те, що інколи я тебе виганяла це нєважліва. Чекаю на наступну зустіч з тобою і дуже сумую❤️
+Бажаю тобі провести цей день з вайбом, бо це все ж таки день народження😝
+        </div>
+        </div>
+    </div>
+    <footer>
+        <button class="back" id="back" onclick="window.location.href='index1.html'">&lt; back</button>
+    </footer>
+    <script>
+        function openLetter() {
+            const closed = document.getElementById("closedLetter");
+            const opened = document.getElementById("openLetter");
+            closed.style.display = "none";
+            closed.classList.remove("show", "hide");
+            opened.classList.remove("hide");
+            opened.classList.add("show");
+        }
+        function closedLetter() {
+            const closed = document.getElementById("closedLetter");
+            const opened = document.getElementById("openLetter");
+            opened.style.display = "none";
+            opened.classList.remove("show", "hide");
+            closed.style.display = "block";
+            closed.classList.remove("hide");
+            closed.classList.add("show");
+        }
+    </script>
+</body>
+
+</html>
